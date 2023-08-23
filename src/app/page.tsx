@@ -144,6 +144,111 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* workshop */}
+      <section className="flex flex-col items-center justify-center w-full h-full">
+        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-12">
+          <h1 className="text-5xl text-center text-black font-bold">
+            Workshop
+          </h1>
+          <Image src="/kunskap.svg" alt="Kunskap logo" width={60} height={72} />
+        </div>
+        <div className="grid grid-cols-2 gap-4 p-12 w-full h-full">
+          <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full ">
+            <div className="flex flex-col w-full h-40 mt-2 ">
+              <h3 className="text-ml text-left text-black font-bold">
+                vad det innebär
+              </h3>
+              <p className="text-ml text-left text-black font-thin mt-3">
+                En digital kunskapsbedömning som genomförs på plats, där både
+                &ldquo;lärare och elever&quot; från kursen närvarar under
+                provet.&rdquo; Det skriftliga provet består av flera
+                flervalsfrågor samt en öppen, scenariobaserad fråga.
+              </p>
+            </div>
+
+            <div className="flex flex-col w-full h-40 mt-2">
+              <h3 className="text-ml text-left text-black font-bold">
+                Varför det är viktigt
+              </h3>
+              <p className="text-ml text-left text-black font-thin mt-3">
+                Problemlösning utgör en väsentlig kompetens för en
+                webbutvecklare. Provet bedömer således kandidatens förmåga att
+                lösa problem
+              </p>
+            </div>
+            <div className="flex flex-col w-full h-40 mt-2 ">
+              <h3 className="text-ml text-left text-black font-bold">
+                Annat bra att veta
+              </h3>
+              <p className="text-ml text-left text-black font-thin mt-3">
+                Kandidaten har rätt att använda ett antal digitala hjälpmedel.
+                Kandidaten har möjlighet att låna en dator från skolan.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full h-full ">
+            <Image
+              src="/kunskapstest-img.png"
+              alt="Kunskap logo"
+              width={400}
+              height={72}
+            />
+          </div>
+        </div>
+      </section>
+      {/* Intervju */}
+      <section className="flex flex-col items-center justify-center w-full h-full">
+        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-12">
+          <h1 className="text-5xl text-center text-black font-bold">
+            Intervju
+          </h1>
+          <Image src="/kunskap.svg" alt="Kunskap logo" width={60} height={72} />
+        </div>
+        <div className="grid grid-cols-2 gap-4 p-12 w-full h-full">
+          <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full ">
+            <div className="flex flex-col w-full h-40 mt-2 ">
+              <h3 className="text-ml text-left text-black font-bold">
+                vad det innebär
+              </h3>
+              <p className="text-ml text-left text-black font-thin mt-3">
+                En digital kunskapsbedömning som genomförs på plats, där både
+                &ldquo;lärare och elever&quot; från kursen närvarar under
+                provet.&rdquo; Det skriftliga provet består av flera
+                flervalsfrågor samt en öppen, scenariobaserad fråga.
+              </p>
+            </div>
+
+            <div className="flex flex-col w-full h-40 mt-2">
+              <h3 className="text-ml text-left text-black font-bold">
+                Varför det är viktigt
+              </h3>
+              <p className="text-ml text-left text-black font-thin mt-3">
+                Problemlösning utgör en väsentlig kompetens för en
+                webbutvecklare. Provet bedömer således kandidatens förmåga att
+                lösa problem
+              </p>
+            </div>
+            <div className="flex flex-col w-full h-40 mt-2 ">
+              <h3 className="text-ml text-left text-black font-bold">
+                Annat bra att veta
+              </h3>
+              <p className="text-ml text-left text-black font-thin mt-3">
+                Kandidaten har rätt att använda ett antal digitala hjälpmedel.
+                Kandidaten har möjlighet att låna en dator från skolan.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full h-full ">
+            <Image
+              src="/kunskapstest-img.png"
+              alt="Kunskap logo"
+              width={400}
+              height={72}
+            />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
