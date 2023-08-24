@@ -1,25 +1,31 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center p-0 bg-white">
       <nav className="flex flex-row w-full space-x-8 h-16 p-2 bg-white shadow-md position-sticky top-0">
-        <Image
-          src="/yrgo.svg"
-          alt="Yrgo logo"
-          width={251}
-          height={72}
-          className=""
-        />
+        <Link
+          href="/"
+          className="flex flex-row items-center justify-center space-x-8 text-black"
+        >
+          <Image
+            src="/yrgo.svg"
+            alt="Yrgo logo"
+            width={190}
+            height={48}
+            className=""
+          />
+        </Link>
         <div className="flex flex-row items-center justify-center space-x-8 text-black">
-          <a href="#" className="text-ml text-center text-sm">
+          <Link href="/" className="text-ml text-center text-sm">
             hur antagningen går till
-          </a>
-          <a href="#" className="text-ml text-center text-sm">
+          </Link>
+          <Link href="/abut" className="text-ml text-center text-sm">
             Om oss
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -61,7 +67,7 @@ export default function Home() {
           <div className="flex flex-row items-center justify-center w-full h-full space-x-8">
             <a href="#kunskapstest">
               <motion.div
-                className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-gray-300"
+                className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-gray-200"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
@@ -221,7 +227,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center w-full h-full ">
             <Image
-              src="/kunskapstest-img.png"
+              src="/workshop-img.png"
               alt="Kunskap logo"
               width={400}
               height={72}
@@ -287,7 +293,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center w-full h-full ">
             <Image
-              src="/kunskapstest-img.png"
+              src="/intervju-img.png"
               alt="Kunskap logo"
               width={400}
               height={72}
