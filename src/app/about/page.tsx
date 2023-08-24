@@ -23,7 +23,7 @@ export default function about() {
           <Link href="/" className="text-ml text-center text-sm">
             hur antagningen går till
           </Link>
-          <Link href="/abut" className="text-ml text-center text-sm">
+          <Link href="/about" className="text-ml text-center text-sm">
             Om oss
           </Link>
         </div>
