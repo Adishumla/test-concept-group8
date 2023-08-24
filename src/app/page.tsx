@@ -15,15 +15,9 @@ export default function Home() {
           className=""
         />
         <div className="flex flex-row items-center justify-center space-x-8 text-black">
-          <motion.a
-            href="#"
-            className="text-ml text-center text-sm"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.1, type: "spring", bounce: 0.1 }}
-          >
+          <a href="#" className="text-ml text-center text-sm">
             hur antagningen går till
-          </motion.a>
+          </a>
           <a href="#" className="text-ml text-center text-sm">
             Om oss
           </a>
@@ -39,68 +33,84 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center w-full h-full mt-10">
           <div className="flex flex-row items-center justify-center w-full h-full space-x-8">
-            <motion.div
-              className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-red-500"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-            >
-              <Image
-                src="/workshop.svg"
-                alt="Workshop logo"
-                width={90}
-                height={129}
-              />
-              <h2 className="text-2xl text-center text-white font-bold">
-                Workshop
-              </h2>
-            </motion.div>
+            <a href="#kunskapstest">
+              <motion.div
+                className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-red-500"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+              >
+                <Image
+                  src="/workshop.svg"
+                  alt="Workshop logo"
+                  width={90}
+                  height={129}
+                  className="pb-2"
+                />
+                <h2 className="text-2xl text-center text-white font-bold">
+                  Workshop
+                </h2>
+              </motion.div>
+            </a>
           </div>{" "}
           <div className="flex flex-row items-center justify-center w-full h-full space-x-8">
-            <motion.div
-              className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-gray-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-            >
-              <Image
-                src="/kunskap.svg"
-                alt="Kunskap logo"
-                width={110}
-                height={72}
-              />
-              <h2 className="text-2xl text-center text-white font-bold">
-                Kunskapstest
-              </h2>
-            </motion.div>
-            <motion.div
-              className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-slate-800"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-            >
-              <Image
-                src="/intervju.svg"
-                alt="Intervju logo"
-                width={90}
-                height={72}
-              />
-              <h2 className="text-2xl text-center text-white font-bold">
-                Intervju
-              </h2>
-            </motion.div>
+            <a href="#workshop">
+              <motion.div
+                className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-gray-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+              >
+                <Image
+                  src="/kunskap.svg"
+                  alt="Kunskap logo"
+                  width={110}
+                  height={72}
+                />
+                <h2 className="text-2xl text-center text-black font-bold">
+                  Kunskapstest
+                </h2>
+              </motion.div>
+            </a>
+            <a href="#intervju">
+              <motion.div
+                className="flex flex-col items-center justify-center w-60 h-60 rounded-full bg-slate-800"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+              >
+                <Image
+                  src="/intervju.svg"
+                  alt="Intervju logo"
+                  width={90}
+                  height={72}
+                />
+                <h2 className="text-2xl text-center text-white font-bold">
+                  Intervju
+                </h2>
+              </motion.div>
+            </a>
           </div>
         </div>
       </section>
+
       {/* Kunskapstest */}
-      <section className="flex flex-col items-center justify-center w-full h-full">
-        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-12">
+      <section
+        id="kunskapstest"
+        className="flex flex-col items-center justify-center w-full h-full"
+      >
+        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-20">
           <h1 className="text-5xl text-center text-black font-bold">
             Kunskapstest
           </h1>
-          <Image src="/kunskap.svg" alt="Kunskap logo" width={60} height={72} />
+          <Image
+            src="/kunskap-logo.svg"
+            alt="Kunskap logo"
+            width={60}
+            height={72}
+          />
         </div>
-        <div className="grid grid-cols-2 gap-4 p-12 w-full h-full">
+        <div className="grid grid-cols-2 gap-4 px-20 w-full h-full">
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full ">
             <div className="flex flex-col w-full h-40 mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
@@ -146,14 +156,22 @@ export default function Home() {
       </section>
 
       {/* workshop */}
-      <section className="flex flex-col items-center justify-center w-full h-full">
-        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-12">
+      <section
+        id="workshop"
+        className="flex flex-col items-center justify-center w-full h-full"
+      >
+        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-20">
           <h1 className="text-5xl text-center text-black font-bold">
             Workshop
           </h1>
-          <Image src="/kunskap.svg" alt="Kunskap logo" width={60} height={72} />
+          <Image
+            src="/workshop-logo.svg"
+            alt="Kunskap logo"
+            width={60}
+            height={72}
+          />
         </div>
-        <div className="grid grid-cols-2 gap-4 p-12 w-full h-full">
+        <div className="grid grid-cols-2 gap-4 px-20 w-full h-full">
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full ">
             <div className="flex flex-col w-full h-40 mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
@@ -198,14 +216,23 @@ export default function Home() {
         </div>
       </section>
       {/* Intervju */}
-      <section className="flex flex-col items-center justify-center w-full h-full">
-        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-12">
+
+      <section
+        id="intervju"
+        className="flex flex-col items-center justify-center w-full h-full"
+      >
+        <div className="flex flex-row items-center justify-between w-full h-full mt-24 px-20">
           <h1 className="text-5xl text-center text-black font-bold">
             Intervju
           </h1>
-          <Image src="/kunskap.svg" alt="Kunskap logo" width={60} height={72} />
+          <Image
+            src="/intervju-logo.svg"
+            alt="Kunskap logo"
+            width={60}
+            height={72}
+          />
         </div>
-        <div className="grid grid-cols-2 gap-4 p-12 w-full h-full">
+        <div className="grid grid-cols-2 gap-4 px-20 w-full h-full">
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full ">
             <div className="flex flex-col w-full h-40 mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
