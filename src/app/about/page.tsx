@@ -23,7 +23,7 @@ export default function about() {
           <Link href="/" className="text-ml text-center text-sm">
             hur antagningen går till
           </Link>
-          <Link href="/abut" className="text-ml text-center text-sm">
+          <Link href="/about" className="text-ml text-center text-sm">
             Om oss
           </Link>
         </div>
@@ -44,8 +44,16 @@ export default function about() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-1/3 sm:w-2/3 mt-2 sm:mt-0">
-            <p className="text-black">Text for Image 1</p>
+          <div className="w-60">
+            <h2 className="text-black text-center pb-1 font-bold">
+              Malin Sahlberg
+            </h2>
+            <p className="text-black text-center">
+              En driven UX-student med ett öga för användarvänlig design.
+              Intresset för att förbättra användarupplevelser går hand i hand
+              med hennes kreativa ådra – när hon inte designar, ägnar hon sig åt
+              stickning och skapar vackra plagg med garn och nålar.
+            </p>
           </div>
         </div>
 
