@@ -266,11 +266,11 @@ export default function Home() {
         </div>
         <div className="grid sm:grid-cols-2 gap-4 px-12 sm:px-20 w-full h-full">
           {/* On mobile, switch order of the grid items */}
-          <div className="flex flex-col items-center justify-center w-full h-full sm:order-2 max-w-4xl">
+          <div className="flex flex-col items-center justify-center w-full h-full sm:order-2 max-w-6xl">
             <Image
               src="/workshop-img.png"
               alt="Workshop logo"
-              width={400}
+              width={500}
               height={72}
               className="w-4/4"
             />
