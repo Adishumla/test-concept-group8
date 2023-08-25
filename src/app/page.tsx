@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const ball1Ref = useRef<HTMLDivElement | null>(null);
