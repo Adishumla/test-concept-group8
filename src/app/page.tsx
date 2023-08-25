@@ -98,7 +98,7 @@ export default function Home() {
             className="absolute flex items-center left-[26px] transform -translate-x-1/2 w-10 h-10 bg-red-500 rounded-full"
           >
             <p className="text-ml text-center text-black font-thin transform translate-x-12">
-              start
+              Start
             </p>
           </div>{" "}
         </div>
@@ -206,7 +206,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
             <div className="flex flex-col w-full h-50 sm:h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
-                vad det innebär
+                Vad det innebär
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
                 En digital kunskapsbedömning som genomförs på plats, där både
@@ -278,7 +278,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
             <div className="flex flex-col w-full h-50 sm:h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
-                vad det innebär
+                Vad det innebär
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
                 Vi har en workshop med grupper om tre personer som samarbetar
@@ -349,7 +349,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
             <div className="flex flex-col w-full h-50 sm:h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
-                vad det innebär
+                Vad det innebär
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
                 Genom den distansintervjun får vi möjlighet att kasta ljus över

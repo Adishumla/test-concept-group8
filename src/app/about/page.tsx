@@ -77,7 +77,7 @@ export default function about() {
           </div>
           <div className="w-60 bg-slate-100 p-2 h-72">
             <h2 className="text-black text-center pb-1 font-bold">
-              Johanna Eliasson
+              Johanna Elisson
             </h2>
             <p className="text-black text-center h-full">
               Johanna är mitt uppe i sin resa som UX-student, fokuserad på att
