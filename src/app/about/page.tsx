@@ -20,10 +20,16 @@ export default function about() {
           />
         </Link>
         <div className="flex flex-row items-center justify-center space-x-8 text-black">
-          <Link href="/" className="text-ml text-center text-sm">
+          <Link
+            href="/"
+            className="text-ml text-center text-sm hover:text-red-500"
+          >
             hur antagningen går till
           </Link>
-          <Link href="/about" className="text-ml text-center text-sm">
+          <Link
+            href="/about"
+            className="text-ml text-center text-sm hover:text-red-500 underline underline-offset-4 decoration-2"
+          >
             Om oss
           </Link>
         </div>

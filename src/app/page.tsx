@@ -2,8 +2,47 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const ball1Ref = useRef<HTMLDivElement | null>(null);
+  const ball4Ref = useRef<HTMLDivElement | null>(null);
+
+  const [ballPositions, setBallPositions] = useState<{
+    ball1?: DOMRect;
+    ball4?: DOMRect;
+  }>({});
+
+  const calculateBallPositions = () => {
+    if (ball1Ref.current && ball4Ref.current) {
+      const ball1Rect = ball1Ref.current.getBoundingClientRect();
+      const ball4Rect = ball4Ref.current.getBoundingClientRect();
+
+      // Adjust positions based on scroll position
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const adjustedTop1 = ball1Rect.top + scrollTop;
+      const adjustedTop4 = ball4Rect.top + scrollTop;
+
+      setBallPositions({
+        ball1: { ...ball1Rect, top: adjustedTop1 },
+        ball4: { ...ball4Rect, top: adjustedTop4 },
+      });
+    }
+  };
+
+  useEffect(() => {
+    calculateBallPositions();
+
+    window.addEventListener("resize", calculateBallPositions);
+
+    return () => {
+      window.removeEventListener("resize", calculateBallPositions);
+    };
+  }, []);
+
+  const isBallPositionsReady = ballPositions.ball1 && ballPositions.ball4;
+
   return (
     <main className="relative flex min-h-screen flex-col items-center p-0 bg-white">
       <nav className="flex flex-row w-full space-x-2 sm:space-x-8 h-16 p-2 bg-white shadow-md position-sticky top-0">
@@ -20,23 +59,41 @@ export default function Home() {
           />
         </Link>
         <div className="flex flex-row items-center justify-center space-x-8 text-black">
-          <Link href="/" className="text-ml text-center text-sm">
+          <Link
+            href="/"
+            className="text-ml text-center text-sm hover:text-red-500 underline underline-offset-4 decoration-2"
+          >
             hur antagningen går till
           </Link>
-          <Link href="/about" className="text-ml text-center text-sm">
+          <Link
+            href="/about"
+            className="text-ml text-center text-sm hover:text-red-500"
+          >
             Om oss
           </Link>
         </div>
       </nav>
 
-      <div className="absolute left-6 w-1 top-32 sm:top-24 h-[calc(100%-78.5rem)] md: sm:h-[calc(100%-79.5rem)] bg-red-500"></div>
+      {isBallPositionsReady && (
+        <div
+          className="absolute left-6 w-1 bg-red-500"
+          style={{
+            top: ballPositions.ball1!.top,
+            height: ballPositions.ball4!.top - ballPositions.ball1!.top,
+          }}
+        />
+      )}
 
       <section className="flex flex-col items-center justify-center w-full h-full">
         <div className="flex flex-col items-center justify-center w-full h-full mt-8 flex-wrap">
-          <h1 className="md:text-2xl px-20 text-sm sm:text-xl text-center text-black font-thin transfrom -translate-y-[-2rem] sm:-translate-y-[-0rem]">
+          <h1 className="md:text-2xl px-20 text-sm sm:text-xl text-center text-black font-light transform -translate-y-[-2rem] sm:-translate-y-[-0rem]">
             Antagningen innehåller tre delar, tryck för att läsa mer
           </h1>
-          <div className="absolute flex items-center left-[26px] transform -translate-x-1/2 w-10 h-10 bg-red-500 rounded-full">
+          <div
+            id="ball1"
+            ref={ball1Ref}
+            className="absolute flex items-center left-[26px] transform -translate-x-1/2 w-10 h-10 bg-red-500 rounded-full"
+          >
             <p className="text-ml text-center text-black font-thin transform translate-x-12">
               start
             </p>
@@ -115,7 +172,11 @@ export default function Home() {
           <h1 className="text-3xl sm:text-5xl text-center text-black font-bold">
             Kunskapstest
           </h1>
-          <div className="absolute flex items-center left-[26px] transform -translate-x-1/2 -translate-y-10 w-10 h-10 bg-red-500 rounded-full">
+          <div
+            id="ball2"
+            /* ref={ball2Ref} */
+            className="absolute flex items-center left-[26px] transform -translate-x-1/2 -translate-y-10 w-10 h-10 bg-red-500 rounded-full"
+          >
             <p className="text-ml text-center text-black font-thin transform translate-x-12">
               Kunskapstest
             </p>
@@ -140,7 +201,7 @@ export default function Home() {
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
-            <div className="flex flex-col w-full h-50 sm:h-40 mt-2 ">
+            <div className="flex flex-col w-full h-50 sm:h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
                 vad det innebär
               </h3>
@@ -152,7 +213,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col w-full h-40 mt-2">
+            <div className="flex flex-col w-full h-auto mt-2">
               <h3 className="text-ml text-left text-black font-bold">
                 Varför det är viktigt
               </h3>
@@ -162,7 +223,7 @@ export default function Home() {
                 lösa problem
               </p>
             </div>
-            <div className="flex flex-col w-full h-40 mt-2 ">
+            <div className="flex flex-col w-full h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
                 Annat bra att veta
               </h3>
@@ -183,7 +244,11 @@ export default function Home() {
           <h1 className="text-3xl sm:text-5xl text-center text-black font-bold">
             Workshop
           </h1>
-          <div className="absolute flex items-center left-[26px] transform -translate-x-1/2 -translate-y-10 w-10 h-10 bg-red-500 rounded-full">
+          <div
+            id="ball3"
+            /* ref={ball3Ref} */
+            className="absolute flex items-center left-[26px] transform -translate-x-1/2 -translate-y-10 w-10 h-10 bg-red-500 rounded-full"
+          >
             <p className="text-ml text-center text-black font-thin transform translate-x-12">
               Workshop
             </p>
@@ -208,35 +273,34 @@ export default function Home() {
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
-            <div className="flex flex-col w-full h-50 sm:h-40 mt-2 ">
+            <div className="flex flex-col w-full h-50 sm:h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
                 vad det innebär
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
-                En digital kunskapsbedömning som genomförs på plats, där både
-                &ldquo;lärare och elever&quot; från kursen närvarar under
-                provet.&rdquo; Det skriftliga provet består av flera
-                flervalsfrågor samt en öppen, scenariobaserad fråga.
+                Vi har en workshop med grupper om tre personer som samarbetar
+                med förskolebarn för att skapa en speciell tårta. Alla bidrar
+                med kreativa idéer för att göra tårtan unik.
               </p>
             </div>
 
-            <div className="flex flex-col w-full h-40 mt-2">
+            <div className="flex flex-col w-full h-auto mt-2">
               <h3 className="text-ml text-left text-black font-bold">
                 Varför det är viktigt
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
-                Problemlösning utgör en väsentlig kompetens för en
-                webbutvecklare. Provet bedömer således kandidatens förmåga att
-                lösa problem
+                Här betonas samarbete och kreativitet när vi skapar en tårta med
+                förskolebarn. Deltagarna utvecklar samarbetsförmåga, stärker
+                inlärningsmotivationen och bygger positiva grupprelationer
               </p>
             </div>
-            <div className="flex flex-col w-full h-40 mt-2 ">
+            <div className="flex flex-col w-full h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
                 Annat bra att veta
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
-                Kandidaten har rätt att använda ett antal digitala hjälpmedel.
-                Kandidaten har möjlighet att låna en dator från skolan.
+                Allt material som behövs för att skapa tårtan kommer att finnas
+                på plats, så ni kan fokusera på den kreativa processen.
               </p>
             </div>
           </div>
@@ -251,7 +315,11 @@ export default function Home() {
           <h1 className="text-3xl sm:text-5xl text-center text-black font-bold">
             Intervju
           </h1>
-          <div className="absolute flex items-center left-[26px] transform -translate-x-1/2 -translate-y-10 w-10 h-10 bg-red-500 rounded-full">
+          <div
+            id="ball4"
+            ref={ball4Ref}
+            className="absolute flex items-center left-[26px] transform -translate-x-1/2 -translate-y-10 w-10 h-10 bg-red-500 rounded-full"
+          >
             <p className="text-ml text-center text-black font-thin transform translate-x-12">
               Intervju
             </p>
@@ -276,48 +344,56 @@ export default function Home() {
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
-            <div className="flex flex-col w-full h-50 sm:h-40 mt-2 ">
+            <div className="flex flex-col w-full h-50 sm:h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
                 vad det innebär
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
-                En digital kunskapsbedömning som genomförs på plats, där både
-                &ldquo;lärare och elever&quot; från kursen närvarar under
-                provet.&rdquo; Det skriftliga provet består av flera
-                flervalsfrågor samt en öppen, scenariobaserad fråga.
+                Genom den distansintervjun får vi möjlighet att kasta ljus över
+                deras unika perspektiv och erfarenheter, samtidigt som vi
+                fördjupar oss i diskussionen om de tidigare inlärda momenten.
+                Denna dynamiska interaktion ger en djupare insikt i ämnet och
+                låter oss koppla samman teori med praktik genom deltagarnas
+                berättelser och åsikter.
               </p>
             </div>
 
-            <div className="flex flex-col w-full h-40 mt-2">
+            <div className="flex flex-col w-full h-auto mt-2">
               <h3 className="text-ml text-left text-black font-bold">
                 Varför det är viktigt
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
-                Problemlösning utgör en väsentlig kompetens för en
-                webbutvecklare. Provet bedömer således kandidatens förmåga att
-                lösa problem
+                Att diskutera tidigare inlärda moment ger oss chansen att se hur
+                teoretiska koncept faktiskt tillämpas i verkliga situationer,
+                vilket stärker kopplingen mellan det akademiska och praktiska.
               </p>
             </div>
-            <div className="flex flex-col w-full h-40 mt-2 ">
+            <div className="flex flex-col w-full h-auto mt-2 ">
               <h3 className="text-ml text-left text-black font-bold">
                 Annat bra att veta
               </h3>
               <p className="text-ml text-left text-black font-thin mt-3">
-                Kandidaten har rätt att använda ett antal digitala hjälpmedel.
-                Kandidaten har möjlighet att låna en dator från skolan.
+                Att ha möjligheten till uppföljning kan vara användbart för att
+                fortsätta diskussionen och utforska mer djuptgående ämnen eller
+                frågor som kan ha uppstått.
               </p>
             </div>
           </div>
         </div>
       </section>
       <section className="flex flex-col items-center justify-center w-full h-full my-12 sm:my-24">
-        <Image
-          src="/good-luck.svg"
-          alt="Lycka till!"
-          width={190}
-          height={48}
-          className="w-3/4 sm:w-1/2"
-        />
+        <Link
+          href="/about "
+          className="flex items-center justify-center w-full"
+        >
+          <Image
+            src="/good-luck.svg"
+            alt="Lycka till!"
+            width={190}
+            height={48}
+            className="w-3/4 sm:w-1/2"
+          />
+        </Link>
       </section>
     </main>
   );
