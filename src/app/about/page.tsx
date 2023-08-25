@@ -19,12 +19,12 @@ export default function about() {
             className=""
           />
         </Link>
-        <div className="flex flex-row items-center justify-center space-x-8 text-black">
+        <div className="flex flex-row items-end justify-center space-x-8 text-black">
           <Link
             href="/"
             className="text-ml text-center text-sm hover:text-red-500"
           >
-            hur antagningen går till
+            Hur antagningen går till
           </Link>
           <Link
             href="/about"

@@ -65,7 +65,7 @@ export default function Home() {
             href="/"
             className="text-ml text-center text-sm hover:text-red-500 underline underline-offset-4 decoration-2"
           >
-            hur antagningen går till
+            Hur antagningen går till
           </Link>
           <Link
             href="/about"
