@@ -42,7 +42,7 @@ export default function about() {
       </section>
 
       <section className="flex flex-row flex-wrap items-top w-full h-full px-3 sm:p-12 justify-center sm:justify-between">
-        <div className="flex flex-col items-start space-y-4 py-4">
+        <div className="flex flex-col items-start space-y-4 py-4 w-60">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
               src="/malin.png"
@@ -52,7 +52,7 @@ export default function about() {
               className="w-full h-full object-contain max-w-60 max-h-64"
             />
           </div>
-          <div className="w-60 bg-slate-100 p-2">
+          <div className="w-60 bg-slate-100 p-2 h-72">
             <h2 className="text-black text-center pb-1 font-bold">
               Malin Sahlberg
             </h2>
@@ -75,20 +75,20 @@ export default function about() {
               className="w-full h-64 object-contain max-w-60 max-h-64"
             />
           </div>
-          <div className="w-60 bg-slate-100 p-2">
+          <div className="w-60 bg-slate-100 p-2 h-72">
             <h2 className="text-black text-center pb-1 font-bold">
-              Malin Sahlberg
+              Johanna Eliasson
             </h2>
-            <p className="text-black text-center">
-              En driven UX-student med ett öga för användarvänlig design.
-              Intresset för att förbättra användarupplevelser går hand i hand
-              med hennes kreativa ådra – när hon inte designar, ägnar hon sig åt
-              stickning och skapar vackra plagg med garn och nålar.
+            <p className="text-black text-center h-full">
+              Johanna är mitt uppe i sin resa som UX-student, fokuserad på att
+              skapa smidiga och intuitiva användarupplevelser. Utöver sin
+              passion för design brinner hon också för att uppleva livekonserter
+              och att vinterbada när tillfälle ges.
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col items-start space-y-4 py-4">
+        <div className="flex flex-col items-start space-y-4 py-4 w-60">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
               src="/adam1.png"
@@ -98,15 +98,15 @@ export default function about() {
               className="w-full h-full object-contain max-w-60 max-h-64"
             />
           </div>
-          <div className="w-60 bg-slate-100 p-2">
+          <div className="w-60 bg-slate-100 p-2 h-72">
             <h2 className="text-black text-center pb-1 font-bold">
-              Malin Sahlberg
+              Adam Garali
             </h2>
             <p className="text-black text-center">
-              En driven UX-student med ett öga för användarvänlig design.
-              Intresset för att förbättra användarupplevelser går hand i hand
-              med hennes kreativa ådra – när hon inte designar, ägnar hon sig åt
-              stickning och skapar vackra plagg med garn och nålar.
+              En hängiven WU student med skick för användarvänlig design.
+              Teknikintresset för att höja användarupplevelsen går hand i hand
+              med hans kreativa sida – vid kodningens frånvaro, ägnar han sig åt
+              stickning och skapar stilfulla plagg med garn och nålar.
             </p>
           </div>
         </div>
@@ -121,15 +121,15 @@ export default function about() {
               className="w-full h-full object-contain max-w-60 max-h-64"
             />
           </div>
-          <div className="w-60 bg-slate-100 p-2">
+          <div className="w-60 bg-slate-100 p-2 h-72">
             <h2 className="text-black text-center pb-1 font-bold">
-              Malin Sahlberg
+              Adam Hjelm
             </h2>
             <p className="text-black text-center">
-              En driven UX-student med ett öga för användarvänlig design.
-              Intresset för att förbättra användarupplevelser går hand i hand
-              med hennes kreativa ådra – när hon inte designar, ägnar hon sig åt
-              stickning och skapar vackra plagg med garn och nålar.
+              En passionerad speldesignstudent med blick för användarvänlig kod.
+              Intresset för att förbättra spelupplevelsen går hand i hand med
+              hans kreativa ådra – när han ej kodar, ägnar han tid åt måleri och
+              skapar vackra konstverk med pensel och duk.
             </p>
           </div>
         </div>
@@ -144,15 +144,15 @@ export default function about() {
               className="w-full h-full object-contain max-w-60 max-h-64"
             />
           </div>
-          <div className="w-60 bg-slate-100 p-2">
+          <div className="w-60 bg-slate-100 p-2 h-72">
             <h2 className="text-black text-center pb-1 font-bold">
-              Malin Sahlberg
+              Erik Lilja
             </h2>
             <p className="text-black text-center">
-              En driven UX-student med ett öga för användarvänlig design.
-              Intresset för att förbättra användarupplevelser går hand i hand
-              med hennes kreativa ådra – när hon inte designar, ägnar hon sig åt
-              stickning och skapar vackra plagg med garn och nålar.
+              En driven spelprogrammerare med blick för teknisk lösning.
+              Intresset för att skapa underhållande spel går hand i hand med
+              hans kreativa ådra – när koder vilar, ägnar han tid åt musik och
+              skapar harmoniska toner med gitarr och strängar.
             </p>
           </div>
         </div>
