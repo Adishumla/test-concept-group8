@@ -19,10 +19,8 @@ export default function Home() {
       const ball4Rect = ball4Ref.current.getBoundingClientRect();
 
       // Adjust positions based on scroll position
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      const adjustedTop1 = ball1Rect.top + scrollTop;
-      const adjustedTop4 = ball4Rect.top + scrollTop;
+      const adjustedTop1 = ball1Rect.top + window.scrollY;
+      const adjustedTop4 = ball4Rect.top + window.scrollY;
 
       setBallPositions({
         ball1: { ...ball1Rect, top: adjustedTop1 },
@@ -32,12 +30,16 @@ export default function Home() {
   };
 
   useEffect(() => {
-    calculateBallPositions();
+    // Calculate ball positions with a slight delay after initial load...
+    const initialTimeout = setTimeout(() => {
+      calculateBallPositions();
+    }, 10);
 
     window.addEventListener("resize", calculateBallPositions);
 
     return () => {
       window.removeEventListener("resize", calculateBallPositions);
+      clearTimeout(initialTimeout);
     };
   }, []);
 
