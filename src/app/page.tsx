@@ -201,6 +201,8 @@ export default function Home() {
               width={400}
               height={72}
               className="w-3/4"
+              placeholder="blur"
+              blurDataURL="/kunskapstest-img.png"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
@@ -273,6 +275,8 @@ export default function Home() {
               width={500}
               height={72}
               className="w-4/4"
+              placeholder="blur"
+              blurDataURL="/workshop-img.png"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
@@ -344,6 +348,8 @@ export default function Home() {
               width={400}
               height={72}
               className="w-3/4"
+              placeholder="blur"
+              blurDataURL="/intervju-img.png"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
@@ -395,6 +401,8 @@ export default function Home() {
             width={190}
             height={48}
             className="w-3/4 sm:w-1/2 max-w-4xl"
+            placeholder="blur"
+            blurDataURL="/good-luck.svg"
           />
         </Link>
       </section>
