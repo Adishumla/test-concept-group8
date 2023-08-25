@@ -5,6 +5,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 
+import kunskap from "/public/kunskapstest-img.png";
+import intervju from "/public/intervju-img.png";
+import workshop from "/public/workshop-img.png";
+
 export default function Home() {
   const ball1Ref = useRef<HTMLDivElement | null>(null);
   const ball4Ref = useRef<HTMLDivElement | null>(null);
@@ -196,13 +200,12 @@ export default function Home() {
           {/* On mobile, switch order of the grid items */}
           <div className="flex flex-col items-center justify-center w-full h-full sm:order-2 max-w-4xl">
             <Image
-              src="/kunskapstest-img.png"
+              src={kunskap}
               alt="Kunskap logo"
               width={400}
               height={72}
               className="w-3/4"
               placeholder="blur"
-              blurDataURL="/kunskapstest-img.png"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
@@ -270,13 +273,12 @@ export default function Home() {
           {/* On mobile, switch order of the grid items */}
           <div className="flex flex-col items-center justify-center w-full h-full sm:order-2 max-w-6xl">
             <Image
-              src="/workshop-img.png"
+              src={workshop}
               alt="Workshop logo"
               width={500}
               height={72}
               className="w-4/4"
               placeholder="blur"
-              blurDataURL="/workshop-img.png"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
@@ -343,13 +345,12 @@ export default function Home() {
           {/* On mobile, switch order of the grid items */}
           <div className="flex flex-col items-center justify-center w-full h-full sm:order-2 max-w-4xl">
             <Image
-              src="/intervju-img.png"
+              src={intervju}
               alt="Intervju logo"
               width={400}
               height={72}
               className="w-3/4"
               placeholder="blur"
-              blurDataURL="/intervju-img.png"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
@@ -401,8 +402,6 @@ export default function Home() {
             width={190}
             height={48}
             className="w-3/4 sm:w-1/2 max-w-4xl"
-            placeholder="blur"
-            blurDataURL="/good-luck.svg"
           />
         </Link>
       </section>

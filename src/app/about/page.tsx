@@ -3,6 +3,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+import malin from "/public/malin.png";
+import johanna from "/public/johanna.png";
+import adam1 from "/public/adam1.png";
+import adam2 from "/public/adam2.png";
+import erik from "/public/erik.png";
+
 export default function about() {
   return (
     <main className="relative flex min-h-screen flex-col h-full items-center p-0 bg-white">
@@ -45,11 +51,12 @@ export default function about() {
         <div className="flex flex-col items-start space-y-4 py-4 w-60">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
-              src="/malin.png"
+              src={malin}
               width={500}
               height={500}
               alt="Image 1"
               className="w-full h-full object-contain max-w-60 max-h-64"
+              placeholder="blur"
             />
           </div>
           <div className="w-60 bg-slate-100 p-2 h-72">
@@ -68,11 +75,12 @@ export default function about() {
         <div className="flex flex-col items-start space-y-4 py-4">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
-              src="/johanna.png"
+              src={johanna}
               width={500}
               height={650}
               alt="Image 1"
               className="w-full h-64 object-contain max-w-60 max-h-64"
+              placeholder="blur"
             />
           </div>
           <div className="w-60 bg-slate-100 p-2 h-72">
@@ -91,11 +99,12 @@ export default function about() {
         <div className="flex flex-col items-start space-y-4 py-4 w-60">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
-              src="/adam1.png"
+              src={adam1}
               width={500}
               height={500}
               alt="Image 1"
               className="w-full h-full object-contain max-w-60 max-h-64"
+              placeholder="blur"
             />
           </div>
           <div className="w-60 bg-slate-100 p-2 h-72">
@@ -114,11 +123,12 @@ export default function about() {
         <div className="flex flex-col items-start space-y-4 py-4">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
-              src="/adam2.png"
+              src={adam2}
               width={500}
               height={500}
               alt="Image 1"
               className="w-full h-full object-contain max-w-60 max-h-64"
+              placeholder="blur"
             />
           </div>
           <div className="w-60 bg-slate-100 p-2 h-72">
@@ -137,11 +147,12 @@ export default function about() {
         <div className="flex flex-col items-start space-y-4 py-4">
           <div className="w-60 border-2 border-red-500 overflow-hidden">
             <Image
-              src="/erik.png"
+              src={erik}
               width={500}
               height={500}
               alt="Image 1"
               className="w-full h-full object-contain max-w-60 max-h-64"
+              placeholder="blur"
             />
           </div>
           <div className="w-60 bg-slate-100 p-2 h-72">
