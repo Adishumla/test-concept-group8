@@ -33,7 +33,7 @@ export default function Home() {
     // Calculate ball positions with a slight delay after initial load...
     const initialTimeout = setTimeout(() => {
       calculateBallPositions();
-    }, 10);
+    }, 100);
 
     window.addEventListener("resize", calculateBallPositions);
 
