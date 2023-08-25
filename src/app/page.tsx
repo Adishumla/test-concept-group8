@@ -272,7 +272,7 @@ export default function Home() {
               alt="Workshop logo"
               width={400}
               height={72}
-              className="w-3/4"
+              className="w-4/4"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-1 items-center justify-center w-full h-full sm:order-1">
